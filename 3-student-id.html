@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeeMate – Verifikasi Student ID</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{background:#000}body{margin:0;background:#0B0B0B}
+a{color:inherit;text-decoration:none}
+.pg{width:100%;max-width:420px;min-height:100vh;min-height:100dvh;margin:0 auto;padding:28px 24px 104px;position:relative;overflow-x:hidden;background:#0B0B0B;color:#fff;font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Arial,sans-serif}
+.pg.auth{padding-bottom:32px}
+.m{color:#B8B8B8}.pk{color:#FF80A8}.col{display:flex;flex-direction:column;gap:14px}.row{display:flex;gap:10px;align-items:center}
+h1{margin:0;font-size:26px;font-weight:800;line-height:1.2}p{margin:0;line-height:1.45}
+.c{background:#151515;border:1.5px solid #2B2B2B;border-radius:18px;padding:16px}
+.in{width:100%;height:46px;border:1px solid #8C8C8C;border-radius:12px;background:#0B0B0B;padding:0 14px;font:inherit;font-size:15px;color:#fff}
+.in::placeholder{color:#B8B8B8}.in:focus{outline:2px solid #FF80A8;outline-offset:1px}
+.lb{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.b,.g{height:48px;border-radius:12px;font:inherit;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;width:100%;cursor:pointer}
+.b{background:#FF80A8;color:#0B0B0B;border:0}.g{border:1.5px solid #fff;color:#fff;background:none}
+.sm{height:40px;font-size:14px}
+.t{background:#2A1620;color:#FF80A8;border-radius:12px;padding:3px 9px;font-size:12px;font-weight:700;white-space:nowrap}
+.av{border-radius:50%;background:#FF80A8;color:#0B0B0B;display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+.chip{height:34px;padding:0 14px;border:1.5px solid #8C8C8C;border-radius:17px;display:flex;align-items:center;font-size:13px;font-weight:700;white-space:nowrap}
+.chip.on{background:#FF80A8;border-color:#FF80A8;color:#0B0B0B}
+.top{display:flex;align-items:center;justify-content:space-between;height:44px;margin-bottom:14px}
+.tab{position:fixed;left:0;right:0;bottom:0;max-width:420px;margin:0 auto;height:76px;background:#101010;border-top:1.5px solid #2B2B2B;display:flex;justify-content:space-around;padding-top:10px;z-index:5}
+.tab a{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#B8B8B8;min-width:60px}.tab a.on{color:#FF80A8}
+.otp{width:46px;height:56px;text-align:center;font-size:22px;font-weight:800;padding:0}
+.bb{padding:10px 14px;border-radius:16px;max-width:78%;font-size:14px;line-height:1.4}
+.bar{flex:1;height:5px;border-radius:3px;background:#2B2B2B}.bar.on{background:#FF80A8}.bar.ok{background:#5FD39A}
+.ci{border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.cv{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #2B2B2B}
+</style>
+</head>
+<body>
+<main class="pg auth">
+<div class="top"><a class="row" href="1-login.html"><img src="logo.png" alt="Logo BeeMate" width="36" height="36" style="border-radius:50%;display:block"><b style="font-size:18px">BeeMate</b></a><span class="m" style="font-size:13px">Langkah 3 dari 4</span></div><div class="row" style="gap:6px;margin-bottom:22px"><div class="bar ok"></div><div class="bar ok"></div><div class="bar on"></div><div class="bar "></div></div><h1>Foto student ID</h1><p class="m" style="margin:8px 0 22px;font-size:14px">Foto kartu mahasiswa Anda untuk membuktikan bahwa Anda bagian dari komunitas BINUS.</p><label class="col" style="border:2px dashed #FF80A8;border-radius:20px;padding:34px 18px;text-align:center;align-items:center;gap:10px;cursor:pointer"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FF80A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><b style="font-size:17px">Unggah foto student ID</b><span class="m" style="font-size:13px">Pilih dari galeri atau ambil foto. Format JPG atau PNG.</span><span class="g sm" style="width:150px;margin-top:6px">Pilih file</span><input type="file" accept="image/png,image/jpeg" style="display:none"></label><div class="col m" style="font-size:13px;gap:6px;margin:18px 0"><span>✓ Seluruh kartu terlihat</span><span>✓ Teks terbaca jelas</span><span>✓ Tanpa pantulan cahaya</span></div><div class="c m" style="font-size:12px;line-height:1.5;padding:12px 14px;border-radius:14px"><b style="color:#fff">Data Anda aman.</b> Data hanya dipakai untuk membuktikan keanggotaan BINUS dan dilindungi sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</div><div class="col" style="margin-top:28px"><a class="b" href="4-otp.html">Lanjutkan</a><a href="2-nim.html" class="pk" style="text-align:center;font-weight:800;font-size:14px">Kembali</a></div>
+</main>
+</body>
+</html>

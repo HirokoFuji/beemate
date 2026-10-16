@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeeMate – Matching</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{background:#000}body{margin:0;background:#0B0B0B}
+a{color:inherit;text-decoration:none}
+.pg{width:100%;max-width:420px;min-height:100vh;min-height:100dvh;margin:0 auto;padding:28px 24px 104px;position:relative;overflow-x:hidden;background:#0B0B0B;color:#fff;font-family:'Plus Jakarta Sans','Segoe UI',Roboto,Arial,sans-serif}
+.pg.auth{padding-bottom:32px}
+.m{color:#B8B8B8}.pk{color:#FF80A8}.col{display:flex;flex-direction:column;gap:14px}.row{display:flex;gap:10px;align-items:center}
+h1{margin:0;font-size:26px;font-weight:800;line-height:1.2}p{margin:0;line-height:1.45}
+.c{background:#151515;border:1.5px solid #2B2B2B;border-radius:18px;padding:16px}
+.in{width:100%;height:46px;border:1px solid #8C8C8C;border-radius:12px;background:#0B0B0B;padding:0 14px;font:inherit;font-size:15px;color:#fff}
+.in::placeholder{color:#B8B8B8}.in:focus{outline:2px solid #FF80A8;outline-offset:1px}
+.lb{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.b,.g{height:48px;border-radius:12px;font:inherit;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;width:100%;cursor:pointer}
+.b{background:#FF80A8;color:#0B0B0B;border:0}.g{border:1.5px solid #fff;color:#fff;background:none}
+.sm{height:40px;font-size:14px}
+.t{background:#2A1620;color:#FF80A8;border-radius:12px;padding:3px 9px;font-size:12px;font-weight:700;white-space:nowrap}
+.av{border-radius:50%;background:#FF80A8;color:#0B0B0B;display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+.chip{height:34px;padding:0 14px;border:1.5px solid #8C8C8C;border-radius:17px;display:flex;align-items:center;font-size:13px;font-weight:700;white-space:nowrap}
+.chip.on{background:#FF80A8;border-color:#FF80A8;color:#0B0B0B}
+.top{display:flex;align-items:center;justify-content:space-between;height:44px;margin-bottom:14px}
+.tab{position:fixed;left:0;right:0;bottom:0;max-width:420px;margin:0 auto;height:76px;background:#101010;border-top:1.5px solid #2B2B2B;display:flex;justify-content:space-around;padding-top:10px;z-index:5}
+.tab a{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:700;color:#B8B8B8;min-width:60px}.tab a.on{color:#FF80A8}
+.otp{width:46px;height:56px;text-align:center;font-size:22px;font-weight:800;padding:0}
+.bb{padding:10px 14px;border-radius:16px;max-width:78%;font-size:14px;line-height:1.4}
+.bar{flex:1;height:5px;border-radius:3px;background:#2B2B2B}.bar.on{background:#FF80A8}.bar.ok{background:#5FD39A}
+.ci{border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.cv{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #2B2B2B}
+</style>
+</head>
+<body>
+<main class="pg mt">
+<style>
+html,body{height:100%;overflow:hidden}.pg.mt{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding-bottom:76px}
+.fl{display:flex;gap:8px;flex-wrap:wrap}.fl .chip{height:32px;padding:0 13px;background:none;color:#fff;font-family:inherit;cursor:pointer}.fl .chip.on{background:#FF80A8;color:#0B0B0B}
+#sw{flex:1;min-height:0;padding:14px 0 40px}#stack{position:relative;width:296px;max-width:100%;height:100%;max-height:410px;margin:0 auto}
+.cd{position:absolute;inset:0;background:#151515;border:2px solid #2B2B2B;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;user-select:none;-webkit-user-select:none;touch-action:none;will-change:transform}
+.cd.up{border-color:#fff;cursor:grab}.cd .ph{flex:1;background:#1D1D1D;display:flex;align-items:center;justify-content:center;position:relative}
+.sk{position:absolute;top:22px;border:3px solid;border-radius:10px;padding:3px 10px;font-weight:800;font-size:20px;opacity:0}
+.sk.l{left:16px;color:#FF80A8;border-color:#FF80A8;transform:rotate(-14deg)}.sk.n{right:16px;color:#fff;border-color:#fff;transform:rotate(14deg)}
+.act{display:flex;justify-content:center;gap:22px;padding-bottom:4px}.act button{border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;background:#232323;border:1.5px solid #FF80A8;color:#fff;border-radius:14px;padding:10px 16px;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;z-index:8;max-width:360px;text-align:center}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:10;padding:24px}#ov.show{display:flex}
+#ov .box{width:100%;max-width:340px;text-align:center}
+</style><div class="top"><a class="row" href="5-beranda.html"><img src="logo.png" alt="Logo BeeMate" width="36" height="36" style="border-radius:50%;display:block"><b style="font-size:18px">BeeMate</b></a><div class="row"><span style="color:#5FD39A;font-size:12px;font-weight:700">✓ Terverifikasi</span><a class="av" href="9-profil.html" aria-label="Profil" style="width:34px;height:34px;font-size:13px">AN</a></div></div><h1>Matching</h1><p class="m" style="font-size:13px;margin:6px 0 12px">Geser kanan untuk menghubungkan, geser kiri untuk melewati.</p><div class="fl" id="chips" role="group" aria-label="Tujuan"><button class="chip on" data-g="Semua">Semua</button><button class="chip" data-g="Teman belajar">Teman belajar</button><button class="chip" data-g="Partner proyek">Partner proyek</button><button class="chip" data-g="Partner organisasi">Partner organisasi</button><button class="chip" data-g="Mentor">Mentor</button></div><div id="sw"><div id="stack" aria-live="polite"></div></div><div class="act"><button id="bn" aria-label="Lewati" style="width:58px;height:58px;font-size:25px;border:2px solid #fff;background:none;color:#fff">✕</button><button id="bs" aria-label="Simpan" style="width:48px;height:48px;font-size:20px;border:2px solid #FF80A8;background:none;color:#FF80A8">★</button><button id="bl" aria-label="Hubungkan" style="width:58px;height:58px;font-size:25px;border:0;background:#FF80A8;color:#0B0B0B">♥</button></div><div id="toast" role="status"></div><div id="ov" role="dialog" aria-modal="true" aria-labelledby="ovt"><div class="box col" style="align-items:center;gap:16px"><div class="row" style="gap:0"><div class="av" style="width:84px;height:84px;font-size:28px;border:3px solid #0B0B0B">AN</div><div class="av" id="ovav" style="width:84px;height:84px;font-size:28px;margin-left:-18px;border:3px solid #0B0B0B;background:#fff"></div></div><h1 id="ovt" class="pk" style="font-size:34px">Cocok!</h1><p class="m" id="ovp"></p><a class="b" id="ovl" href="8-chat.html">Kirim pesan</a><button class="g" id="ovx">Lanjut geser</button></div></div><nav class="tab" aria-label="Navigasi utama"><a href="5-beranda.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v10H3z"/></svg>Beranda</a><a href="6-matching.html" class="on" aria-current="page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="3"/><path d="M9 12l2 2 4-4"/></svg>Matching</a><a href="7-pesan.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Pesan</a><a href="9-profil.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg>Profil</a></nav><script>
+(function(){
+var P=[{i:"NA",n:"Nadia A.",s:"Computer Science · Angkatan 2024",g:"Teman belajar",t:["Data Science","Kompetisi","UI/UX"],m:1},
+{i:"KR",n:"Kevin R.",s:"Computer Science · Angkatan 2022",g:"Mentor",t:["Web Development","Karier IT"]},
+{i:"RP",n:"Rafi P.",s:"Information Systems · Angkatan 2023",g:"Partner organisasi",t:["Organisasi","Proyek Mobile App"],m:1},
+{i:"DS",n:"Dinda S.",s:"Computer Science · Angkatan 2024",g:"Partner proyek",t:["UI/UX","Kompetisi"]},
+{i:"BT",n:"Bayu T.",s:"Information Systems · Angkatan 2023",g:"Teman belajar",t:["Data Science","Web Development"]}];
+var stack=document.getElementById("stack"),toast=document.getElementById("toast"),ov=document.getElementById("ov");
+var filter="Semua",idx=0,busy=false,calm=window.matchMedia("(prefers-reduced-motion: reduce)").matches,tt;
+function deck(){return P.filter(function(p){return filter==="Semua"||p.g===filter;});}
+function say(m){toast.textContent=m;toast.style.opacity=1;clearTimeout(tt);tt=setTimeout(function(){toast.style.opacity=0;},1800);}
+function tags(a){return a.map(function(x){return '<span class="t">'+x+'</span>';}).join("");}
+function mk(p){var d=document.createElement("div");d.className="cd";
+d.innerHTML='<div class="ph"><div class="av" style="width:120px;height:120px;font-size:44px">'+p.i+'</div><span class="sk l">HUBUNGKAN</span><span class="sk n">LEWATI</span></div><div class="col" style="padding:16px 18px;gap:8px"><div><div style="font-size:22px;font-weight:800">'+p.n+(p.g==="Mentor"?' <span class="t">Mentor</span>':'')+'</div><div class="m" style="font-size:13px">'+p.s+'</div></div><div class="m" style="font-size:13px">Mencari: <b style="color:#fff">'+p.g+'</b></div><div class="row" style="gap:6px;flex-wrap:wrap">'+tags(p.t)+'</div></div>';return d;}
+function nxt(){var c=stack.children;return c.length>1?c[c.length-2]:null;}
+function pos(d,x){var n=nxt(),k=Math.min(Math.abs(x)/120,1);if(n){n.style.transform="translateY("+16*(1-k)+"px) scale("+(.94+.06*k)+")";n.style.filter="brightness("+(.8+.2*k)+")";n.style.borderColor=k>.5?"#fff":"#444";}d.style.transform="translateX("+x+"px) rotate("+(x/18)+"deg)";d.querySelector(".l").style.opacity=Math.max(0,Math.min(1,x/90));d.querySelector(".n").style.opacity=Math.max(0,Math.min(1,-x/90));}
+function render(){var D=deck(),i;stack.innerHTML="";
+if(idx>=D.length){stack.innerHTML='<div class="c col" style="height:100%;align-items:center;justify-content:center;text-align:center;border-radius:26px"><b style="font-size:20px">Rekomendasi habis</b><p class="m" style="font-size:14px">Anda sudah melihat semua mahasiswa untuk tujuan ini.</p><button class="b" id="rl" style="width:180px;cursor:pointer">Muat ulang</button></div>';document.getElementById("rl").onclick=function(){idx=0;render();};return;}
+for(i=Math.min(2,D.length-idx-1);i>=0;i--){var d=mk(D[idx+i]);if(i===0){d.classList.add("up");grab(d);}else{d.style.transformOrigin="50% 100%";d.style.borderColor="#444";d.style.transform="translateY("+16*i+"px) scale("+(1-.06*i)+")";d.style.filter="brightness("+(i===1?.8:.6)+")";}stack.appendChild(d);}}
+function grab(d){var sx=0,dx=0,on=false;
+d.addEventListener("pointerdown",function(e){if(busy)return;on=true;sx=e.clientX;dx=0;d.style.transition="none";d.setPointerCapture(e.pointerId);d.style.cursor="grabbing";});
+d.addEventListener("pointermove",function(e){if(!on)return;dx=e.clientX-sx;var n=nxt();if(n)n.style.transition="none";pos(d,dx);});
+function end(){if(!on)return;on=false;d.style.cursor="grab";if(Math.abs(dx)>90){fling(dx>0?1:-1);}else{var n=nxt();if(n)n.style.transition=calm?"none":"transform .25s, filter .25s";d.style.transition=calm?"none":"transform .25s";pos(d,0);}}
+d.addEventListener("pointerup",end);d.addEventListener("pointercancel",end);}
+function fling(dir){var d=stack.querySelector(".up");if(!d||busy)return;busy=true;var p=deck()[idx];
+var n=nxt();if(n)n.style.transition=calm?"none":"transform .3s ease-out, filter .3s";d.style.transition=calm?"none":"transform .3s ease-out";pos(d,dir*500);d.querySelector(dir>0?".l":".n").style.opacity=1;
+setTimeout(function(){idx++;busy=false;render();
+if(dir>0){if(p.m){document.getElementById("ovav").textContent=p.i;document.getElementById("ovp").textContent="Anda dan "+p.n+" saling tertarik untuk "+p.g.toLowerCase()+".";ov.classList.add("show");document.getElementById("ovl").focus();}else{say("Permintaan koneksi terkirim ke "+p.n);}}},calm?0:300);}
+document.getElementById("bn").onclick=function(){fling(-1);};document.getElementById("bl").onclick=function(){fling(1);};
+document.getElementById("bs").onclick=function(){var p=deck()[idx];if(p)say(p.n+" disimpan");};
+document.getElementById("ovx").onclick=function(){ov.classList.remove("show");};
+document.addEventListener("keydown",function(e){if(ov.classList.contains("show")){if(e.key==="Escape")ov.classList.remove("show");return;}if(e.key==="ArrowLeft")fling(-1);if(e.key==="ArrowRight")fling(1);});
+document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;filter=b.dataset.g;idx=0;[].forEach.call(this.children,function(c){c.classList.toggle("on",c===b);});render();});
+render();})();
+</script>
+</main>
+</body>
+</html>
